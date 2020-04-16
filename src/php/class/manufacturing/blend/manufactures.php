@@ -1,5 +1,5 @@
 <?php
-namespace blend;
+namespace manufacturing\blend;
 
 class manufactures extends \Blend
 {

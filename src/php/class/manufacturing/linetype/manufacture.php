@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace manufacturing\linetype;
 
 class manufacture extends \Linetype
 {

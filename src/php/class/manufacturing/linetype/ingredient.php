@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace manufacturing\linetype;
 
 class ingredient extends \Linetype
 {
