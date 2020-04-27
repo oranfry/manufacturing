@@ -54,7 +54,7 @@ class manufacture extends \Linetype
         ];
     }
 
-    function astext($line, $child_sets) {
+    function astext($line) {
         $skumetas = get_sku_meta();
         $printout = '';
         $printout .= str_pad("Manufacture", 42, " ", STR_PAD_BOTH) . "\n";
@@ -64,7 +64,7 @@ class manufacture extends \Linetype
         $printout .= "\n\n";
 
         $subtotal = '0.00';
-        $unitsWidth = array_reduce($child_sets['ingredients']->lines, function($c, $v) use($skumetas) {
+        $unitsWidth = array_reduce($line->ingredients, function($c, $v) use($skumetas) {
             return max($c, strlen(@$skumetas[$v->sku]->unit));
         });
 
@@ -72,7 +72,7 @@ class manufacture extends \Linetype
 
         $printout .= "\n\n";
 
-        foreach ($child_sets['products']->lines as $i => $product) {
+        foreach ($line->products as $i => $product) {
             $meta = @$skumetas[$product->sku];
             $product_title = @$meta->title ?: $product->sku;
             $product_unit = @$meta->unit;
@@ -88,7 +88,7 @@ class manufacture extends \Linetype
         $printout .= str_pad("Ingredients", 42, " ", STR_PAD_BOTH);
         $printout .= "\n\n";
 
-        foreach ($child_sets['ingredients']->lines as $i => $ingredient) {
+        foreach ($line->ingredients as $i => $ingredient) {
             $meta = @$skumetas[$ingredient->sku];
             $ingredient_title = @$meta->title ?: $ingredient->sku;
             $ingredient_unit = @$meta->unit;
