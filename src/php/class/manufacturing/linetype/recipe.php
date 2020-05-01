@@ -26,24 +26,24 @@ class recipe extends \Linetype
             (object) [
                 'name' => 'sku',
                 'type' => 'text',
-                'fuse' => 't.sku',
+                'fuse' => '{t}.sku',
             ],
             (object) [
                 'name' => 'amount',
                 'type' => 'number',
-                'fuse' => 't.amount',
+                'fuse' => '{t}.amount',
             ],
             (object) [
                 'name' => 'method',
                 'type' => 'multiline',
-                'fuse' => 't.method',
+                'fuse' => '{t}.method',
                 'sacrifice' => true,
             ],
         ];
         $this->unfuse_fields = [
-            't.sku' => ':sku',
-            't.method' => ':method',
-            't.amount' => ':amount',
+            '{t}.sku' => ':{t}_sku',
+            '{t}.method' => ':{t}_method',
+            '{t}.amount' => ':{t}_amount',
         ];
     }
 }

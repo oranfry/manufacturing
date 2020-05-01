@@ -32,25 +32,25 @@ class manufacture extends \Linetype
             (object) [
                 'name' => 'date',
                 'type' => 'date',
-                'fuse' => 't.date',
+                'fuse' => '{t}.date',
                 'main' => true,
             ],
             (object) [
                 'name' => 'description',
                 'type' => 'text',
-                'fuse' => 't.description',
+                'fuse' => '{t}.description',
             ],
             (object) [
                 'name' => 'method',
                 'type' => 'multiline',
-                'fuse' => 't.method',
+                'fuse' => '{t}.method',
                 'sacrifice' => true,
             ],
         ];
         $this->unfuse_fields = [
-            't.date' => ':date',
-            't.description' => ':description',
-            't.method' => ':method',
+            '{t}.date' => ':{t}_date',
+            '{t}.description' => ':{t}_description',
+            '{t}.method' => ':{t}_method',
         ];
     }
 

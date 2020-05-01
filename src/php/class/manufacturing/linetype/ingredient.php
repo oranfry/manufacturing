@@ -18,17 +18,17 @@ class ingredient extends \Linetype
             (object) [
                 'name' => 'sku',
                 'type' => 'text',
-                'fuse' => 't.sku',
+                'fuse' => '{t}.sku',
             ],
             (object) [
                 'name' => 'amount',
                 'type' => 'number',
-                'fuse' => 't.amount',
+                'fuse' => '{t}.amount',
             ],
         ];
         $this->unfuse_fields = [
-            't.sku' => ':sku',
-            't.amount' => ':amount',
+            '{t}.sku' => ':{t}_sku',
+            '{t}.amount' => ':{t}_amount',
         ];
     }
 
