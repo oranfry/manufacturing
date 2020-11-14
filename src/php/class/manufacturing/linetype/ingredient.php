@@ -32,11 +32,11 @@ class ingredient extends \Linetype
         ];
     }
 
-    public function get_suggested_values()
+    public function get_suggested_values($token)
     {
         $suggested_values = [];
 
-        $suggested_values['sku'] = get_values('stocktransfer', 'sku');
+        $suggested_values['sku'] = get_values($token, 'stocktransfer', 'sku');
 
         return $suggested_values;
     }
