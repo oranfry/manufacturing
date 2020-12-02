@@ -48,9 +48,18 @@ class manufacture extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.date' => ':{t}_date',
-            '{t}.description' => ':{t}_description',
-            '{t}.method' => ':{t}_method',
+            '{t}.date' => (object) [
+                'expression' => ':{t}_date',
+                'type' => 'date',
+            ],
+            '{t}.description' => (object) [
+                'expression' => ':{t}_description',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.method' => (object) [
+                'expression' => ':{t}_method',
+                'type' => 'text',
+            ],
         ];
     }
 
